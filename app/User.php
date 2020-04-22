@@ -45,8 +45,4 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    public function sosmed()
-    {
-        return $this->hasMany(SocMed::class);
-    }
 }

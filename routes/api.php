@@ -27,8 +27,9 @@ Route::group(['middleware' => 'jwt.verify'], function () { //middleware untuk ve
     Route::get('user', 'UserController@getAuthenticatedUser'); //route lihat current user
     Route::put('user/{id}','UserController@changeUserData'); //route ganti data user
 
-    Route::get('semuasosmed', 'SocMedController@daftarSosmed'); //
-    Route::post('tambahsosmed', 'SocMedController@store');
-    Route::put('editsosmed/{id}','SocMedController@update');
-    Route::delete('hapussosmed/{id}', 'SocmedController@destroy');
+    Route::post('rentals', 'RentalsController@add');//nambah rentalan baru
+    Route::get('rentals', 'RentalsController@all');
+    Route::get('rentals/{id}', 'RentalsController@detail');
+    Route::put('rentals/{id}', 'RentalsController@edit');
+    Route::delete('rentals/{id}', 'RentalsController@destroy');
 });
